@@ -1,5 +1,5 @@
 const fs = require('node:fs');
-const raw = process.env.SITE_URL || process.env.VERCEL_PROJECT_PRODUCTION_URL || process.env.VERCEL_URL;
+const raw = process.env.SITE_URL || process.env.VERCEL_PROJECT_PRODUCTION_URL || process.env.VERCEL_URL || 'chadascooperadoras.vercel.app';
 if (!raw) throw new Error('Endereço ausente. Na Vercel, habilite as variáveis de ambiente do sistema. Para testar localmente, defina SITE_URL.');
 const url = new URL(raw.includes('://') ? raw : `https://${raw}`);
 if (!['http:', 'https:'].includes(url.protocol)) throw new Error('Endereço inválido.');
